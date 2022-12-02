@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Spotify UI Automation - BrowserStack" parallel="tests" thread-count="3">
+    <test name="Spotify UI Test in chrome Browser - BrowserStack">
+        <parameter name="browserName" value="Chrome"></parameter>
+        <parameter name="browserVersion" value="101.0"></parameter>
+        <parameter name="os" value="Windows"></parameter>
+        <parameter name="osVersion" value="8.1"></parameter>
+        <parameter name="envName" value="remote"></parameter>
+
+        <groups>
+            <run>
+                <include name="login"></include>
+                <include name="smoke"></include>
+                <include name="createPlaylist"></include>
+                <include name="edit"></include>
+                <include name="search"></include>
+                <include name="remove"></include>
+                <include name="delete"></include>
+
+            </run>
+        </groups>
+        <classes>
+            <class name="ui.tests.AccountTest"></class>
+            <class name="ui.tests.CreatePlaylistTest"></class>
+            <class name="ui.tests.EditPlaylist"></class>
+            <class name="ui.tests.SearchTest"></class>
+            <class name="ui.tests.RemoveSongTest"></class>
+            <class name="ui.tests.DeletePlaylistTest"></class>
+
+        </classes>
+    </test>
+</suite>

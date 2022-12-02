@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Spotify UI Automation Login Page Tests" parallel="tests" thread-count="3">
+    <listeners>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"></listener>
+    </listeners>
+    <test name="Login With DataProvider with Empty Credentials using Chrome">
+        <parameter name="browserName" value="Chrome"></parameter>
+        <classes>
+            <class name="ui.tests.InvalidCredentials">
+                <methods>
+                    <include name="invalidDetails" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login with DataProvider with Invalid Credentials Using Chrome">
+        <parameter name="browserName" value="Chrome"></parameter>
+        <classes>
+            <class name="ui.tests.InvalidCredentials">
+                <methods>
+                    <include name="invalidCredentials" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
